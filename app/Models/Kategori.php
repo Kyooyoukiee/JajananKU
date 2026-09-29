@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kategori extends Model
 {
-    //
+    protected $fillable = [
+        'nama_kategori'
+    ];
+
+    public function jajans(){
+        return $this->hasMany(Jajan::class);
+    }
 }
