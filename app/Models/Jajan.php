@@ -13,6 +13,6 @@ class Jajan extends Model
     ];
 
     public function kategoris(){
-        return $this->belongTo(Kategori::class);
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
 }

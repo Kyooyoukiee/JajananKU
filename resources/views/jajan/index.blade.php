@@ -11,11 +11,24 @@
                 <th>Nama Jajanan</th>
                 <th>Harga Jajanan</th>
                 <th>Kategori Jajanan</th>
+                <th>Tanggal Dibuat</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            
+            @foreach($semuaJajan as $jajan)
+            <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$jajan->nama_jajanan}}</td>
+                <td>{{$jajan->harga_jajanan}}</td>
+                <td>{{$jajan->kategoris->nama_kategori}}</td>
+                <td>{{$jajan->created_at}}</td>
+                <td>
+                    <a href='/edit/jajanan/{{$jajan->id}}'>Edit Jajanan</a>
+                    <a href='/hapus/jajanan/{{$jajan->id}}'>Hapus Jajanan</a>
+                </td>
+            </tr>
+            @endforeach
         </tbody>
     </table>
 @endsection

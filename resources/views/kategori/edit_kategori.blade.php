@@ -6,7 +6,7 @@
     <a href='/kategori/jajanan'>Kembali</a>
     <form action='/simpanedit/kategori/jajanan/{{$kategori->id}}' method='POST'>
         @csrf
-        Masukkan Nama Kategori:
+        Edit Nama Kategori:
         <input type='text' name='nama_kategori' value='{{$kategori->nama_kategori}}' />
         @error('nama_kategori')
             <div style='color: red'>{{$message}}</div>
