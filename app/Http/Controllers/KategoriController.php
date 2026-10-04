@@ -29,12 +29,12 @@ class KategoriController extends Controller
         else {
             $kategori = Kategori::create($request->all());
         }
-        return redirect('/kategori/jajanan');
+        return redirect('/kategori-jajanan');
     }
     public function hapus_kategori_jajanan($id){
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
-        return redirect('/kategori/jajanan');
+        return redirect('/kategori-jajanan');
     }
         public function edit_kategori_jajanan($id){
         $kategori = Kategori::findOrFail($id);

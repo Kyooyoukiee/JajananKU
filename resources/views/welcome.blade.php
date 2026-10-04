@@ -2,5 +2,5 @@
 
 @section('content')
     <h1>Halo, Selamat datang di aplikasi JajananKU</h1>
-    <p>Aplikasi yang berguna untuk menyimpan data jajanan kalian dengan mudah dan aman</p>
+    <p>Catat semua jajanan favoritmu dengan mudah, rapi, dan aman di satu tempat.</p>
 @endsection

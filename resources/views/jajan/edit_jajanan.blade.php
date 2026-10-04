@@ -2,8 +2,8 @@
 @section('content')
     <h3>Edit Jajanan</h3>
     <p>Silahkan edit nama jajanan yang anda inginkan</p>
-    <a href="/daftar/jajanan">Kembali ke Daftar Jajanan</a>
-    <form action='/simpanedit/jajanan/{{$jajan->id}}' method='POST'>
+    <a href="/jajanan">Kembali ke Daftar Jajanan</a>
+    <form action='/jajanan/{{$jajan->id}}/simpanedit' method='POST'>
         @csrf
         Edit Nama Jajanan:
         <input type='text' name='nama_jajanan' value="{{ $jajan->nama_jajanan }}" />

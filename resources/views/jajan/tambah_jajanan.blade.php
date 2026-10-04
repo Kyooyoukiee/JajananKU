@@ -2,8 +2,8 @@
 @section('content')
     <h3>Tambah Jajanan</h3>
     <p>Silahkan masukkan nama jajanan yang anda inginkan</p>
-    <a href="/daftar/jajanan">Kembali ke Daftar Jajanan</a>
-    <form action='/simpan/jajanan' method='POST'>
+    <a href="/jajanan">Kembali ke Daftar Jajanan</a>
+    <form action='/jajanan/simpan' method='POST'>
         @csrf
         Masukkan Nama Jajanan:
         <input type='text' name='nama_jajanan' value="{{ old('nama_jajanan') }}" />

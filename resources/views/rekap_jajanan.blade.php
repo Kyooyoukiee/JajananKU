@@ -2,6 +2,7 @@
 
 @section('content')
     <h3>Rekap Jajanan Saya</h3>
+    <p>Disini anda dapat melihat rekap jajanan yang telah anda tambahkan</p>
     <p>Total Biaya Jajanan: Rp {{ number_format($totalBiayaJajanan, 0, ',', '.') }}</p>
     <p>Jumlah Jajanan: {{ $jumlahJajanan }}</p>
     <p>Kategori Jajanan: {{ $semuaKategori->count() }}</p>

@@ -8,18 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/kategori/jajanan', [KategoriController::class, 'kategori_jajanan']);
-Route::get('/tambah/kategori/jajanan', [KategoriController::class, 'tambah_kategori_jajanan']);
-Route::post('/simpan/kategori/jajanan', [KategoriController::class, 'simpan_kategori_jajanan']);
-Route::get('/hapus/kategori/jajanan/{id}', [KategoriController::class, 'hapus_kategori_jajanan']);
-Route::get('/edit/kategori/jajanan/{id}', [KategoriController::class, 'edit_kategori_jajanan']);
-Route::post('/simpanedit/kategori/jajanan/{id}', [KategoriController::class, 'simpan_kategori_jajanan']);
+Route::get('/kategori-jajanan', [KategoriController::class, 'kategori_jajanan']);
+Route::get('/kategori-jajanan/tambah', [KategoriController::class, 'tambah_kategori_jajanan']);
+Route::post('/kategori-jajanan/simpan', [KategoriController::class, 'simpan_kategori_jajanan']);
+Route::get('/kategori-jajanan/{id}/hapus', [KategoriController::class, 'hapus_kategori_jajanan']);
+Route::get('/kategori-jajanan/{id}/edit', [KategoriController::class, 'edit_kategori_jajanan']);
+Route::post('/kategori-jajanan/{id}/simpanedit', [KategoriController::class, 'simpan_kategori_jajanan']);
 
-Route::get('/daftar/jajanan', [JajanController::class, 'index']);
-Route::get('/tambah/jajanan', [JajanController::class, 'tambah_jajanan']);
-Route::post('/simpan/jajanan', [JajanController::class, 'simpan_jajanan']);
-Route::get('/hapus/jajanan/{id}', [JajanController::class, 'hapus_jajanan']);
-Route::get('/edit/jajanan/{id}', [JajanController::class, 'edit_jajanan']);
-Route::post('/simpanedit/jajanan/{id}', [JajanController::class, 'simpan_jajanan']);
+Route::get('/jajanan', [JajanController::class, 'index']);
+Route::get('/jajanan/tambah', [JajanController::class, 'tambah_jajanan']);
+Route::post('/jajanan/simpan', [JajanController::class, 'simpan_jajanan']);
+Route::get('/jajanan/{id}/hapus', [JajanController::class, 'hapus_jajanan']);
+Route::get('/jajanan/{id}/edit', [JajanController::class, 'edit_jajanan']);
+Route::post('/jajanan/{id}/simpanedit', [JajanController::class, 'simpan_jajanan']);
 
-Route::get('/rekap/jajanan', [JajanController::class, 'rekap_jajanan']);
+Route::get('/jajanan/rekap', [JajanController::class, 'rekap_jajanan']);

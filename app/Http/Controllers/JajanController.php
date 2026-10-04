@@ -48,7 +48,7 @@ class JajanController extends Controller
         $jajan->harga_jajanan = $request->harga_jajanan;
         $jajan->save();
 
-        return redirect('/daftar/jajanan');
+        return redirect('/jajanan');
     }
 
     public function hapus_jajanan($id)
@@ -56,7 +56,7 @@ class JajanController extends Controller
         $jajan = Jajan::findOrFail($id);
         $jajan->delete();
 
-        return redirect('/daftar/jajanan');
+        return redirect('/jajanan');
     }
 
     public function edit_jajanan($id)

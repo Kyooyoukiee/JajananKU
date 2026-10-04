@@ -3,8 +3,8 @@
 @section('content')
     <h3>Tambah Kategori Jajanan</h3>
     <p>Silahkan masukkan nama kategori jajanan yang anda inginkan</p>
-    <a href='/kategori/jajanan'>Kembali ke Daftar Kategori Jajanan</a>
-    <form action='/simpan/kategori/jajanan' method='POST'>
+    <a href='/kategori-jajanan'>Kembali ke Daftar Kategori Jajanan</a>
+    <form action='/kategori-jajanan/simpan' method='POST'>
         @csrf
         Masukkan Nama Kategori:
         <input type='text' name='nama_kategori' />

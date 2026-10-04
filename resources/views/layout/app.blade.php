@@ -7,9 +7,9 @@
 </head>
 <body>
     <a href="/">Beranda</a><br>
-    <a href="/daftar/jajanan">Lihat Daftar Jajanan</a><br>
-    <a href="/kategori/jajanan">Lihat Kategori Jajanan</a><br>
-    <a href="/rekap/jajanan">Rekapan Jajanan</a>
+    <a href="/jajanan">Lihat Daftar Jajanan</a><br>
+    <a href="/kategori-jajanan">Lihat Kategori Jajanan</a><br>
+    <a href="/jajanan/rekap">Rekapan Jajanan</a>
     <hr>
     
     <div>

@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <a href='/tambah/kategori/jajanan'>Tambah Kategori Jajanan</a><br>
+    <a href='/kategori-jajanan/tambah'>Tambah Kategori Jajanan</a><br>
     <h3>Daftar Kategori Jajanan</h3>
     <table border='1'>
         <thead>
@@ -17,8 +17,8 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$kategori->nama_kategori}}</td>
                     <td>
-                        <a href='/edit/kategori/jajanan/{{$kategori->id}}'>Edit Kategori</a>
-                        <a href='/hapus/kategori/jajanan/{{$kategori->id}}'>Hapus Kategori</a>
+                        <a href='/kategori-jajanan/{{$kategori->id}}/edit'>Edit Kategori</a>
+                        <a href='/kategori-jajanan/{{$kategori->id}}/hapus'>Hapus Kategori</a>
                     </td>
                 </tr>
             @endforeach

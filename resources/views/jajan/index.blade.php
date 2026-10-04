@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <a href='/tambah/jajanan'>Tambah Jajanan</a>
+    <a href='/jajanan/tambah'>Tambah Jajanan</a>
     <br>
     <h3>Daftar Jajanan</h3>
     <table border='1'>
@@ -24,8 +24,8 @@
                 <td>{{$jajan->kategoris->nama_kategori}}</td>
                 <td>{{$jajan->created_at}}</td>
                 <td>
-                    <a href='/edit/jajanan/{{$jajan->id}}'>Edit Jajanan</a>
-                    <a href='/hapus/jajanan/{{$jajan->id}}'>Hapus Jajanan</a>
+                    <a href='/jajanan/{{$jajan->id}}/edit'>Edit Jajanan</a>
+                    <a href='/jajanan/{{$jajan->id}}/hapus'>Hapus Jajanan</a>
                 </td>
             </tr>
             @endforeach
