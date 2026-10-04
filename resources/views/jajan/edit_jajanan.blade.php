@@ -21,7 +21,9 @@
         <select name='kategori_id'>
             <option value=''>Pilih Kategori</option>
             @foreach($semuaKategori as $kategori)
-                <option value='{{ $kategori->id }}' {{ $jajan->kategori_id == $kategori->id ? 'selected' : '' }}>{{ $kategori->nama_kategori }}</option>
+                <option value='{{ $kategori->id }}' 
+                {{ $jajan->kategori_id == $kategori->id ? 'selected' : '' }}
+                >{{ $kategori->nama_kategori }}</option>
             @endforeach
         </select>
         @error('kategori_id')
