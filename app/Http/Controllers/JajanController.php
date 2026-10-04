@@ -2,21 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Jajan;
 use App\Models\Kategori;
+use Illuminate\Http\Request;
 
 class JajanController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $semuaJajan = Jajan::all();
+
         return view('jajan.index', compact('semuaJajan'));
     }
-    public function tambah_jajanan(){
+
+    public function tambah_jajanan()
+    {
         $semuaKategori = Kategori::all();
+
         return view('jajan.tambah_jajanan', compact('semuaKategori'));
     }
-    public function simpan_jajanan(Request $request, $id = null){
+
+    public function simpan_jajanan(Request $request, $id = null)
+    {
         $request->validate([
             'nama_jajanan' => 'required',
             'harga_jajanan' => 'required|numeric',
@@ -29,7 +36,7 @@ class JajanController extends Controller
             'kategori_id.exists' => 'Kategori yang dipilih tidak valid.',
         ]);
 
-        if($id){
+        if ($id) {
             $jajan = Jajan::findOrFail($id);
             $jajan->update($request->all());
         } else {
@@ -40,26 +47,36 @@ class JajanController extends Controller
         $jajan->nama_jajanan = $request->nama_jajanan;
         $jajan->harga_jajanan = $request->harga_jajanan;
         $jajan->save();
+
         return redirect('/daftar/jajanan');
     }
-    public function hapus_jajanan($id){
+
+    public function hapus_jajanan($id)
+    {
         $jajan = Jajan::findOrFail($id);
         $jajan->delete();
+
         return redirect('/daftar/jajanan');
     }
-    public function edit_jajanan($id){
+
+    public function edit_jajanan($id)
+    {
         $jajan = Jajan::findOrFail($id);
         $semuaKategori = Kategori::all();
+
         return view('jajan.edit_jajanan', compact('jajan', 'semuaKategori'));
     }
-    public function rekap_jajanan(){
+
+    public function rekap_jajanan()
+    {
         $semuaJajan = Jajan::all();
         $totalBiayaJajanan = $semuaJajan->sum('harga_jajanan');
         $jumlahJajanan = $semuaJajan->count();
-        $semuaKategori = Kategori::all();
+        $semuaKategori = Kategori::withCount('jajans')->get();
+
         return view('rekap_jajanan', compact(
-            'semuaJajan', 
-            'totalBiayaJajanan', 
+            'semuaJajan',
+            'totalBiayaJajanan',
             'semuaKategori',
             'jumlahJajanan'
         ));
