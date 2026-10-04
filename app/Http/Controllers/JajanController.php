@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Jajan;
 use App\Models\Kategori;
-use Illuminate\Http\Request;
 
 class JajanController extends Controller
 {
