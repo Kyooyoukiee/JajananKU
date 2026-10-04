@@ -31,12 +31,12 @@ class KategoriController extends Controller
         }
         return redirect('/kategori-jajanan');
     }
-    public function hapus_kategori_jajanan($id){
+    public function hapus_kategori_jajanan(int $id){
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
         return redirect('/kategori-jajanan');
     }
-        public function edit_kategori_jajanan($id){
+        public function edit_kategori_jajanan(int $id){
         $kategori = Kategori::findOrFail($id);
         return view('kategori.edit_kategori', compact('kategori'));
     }

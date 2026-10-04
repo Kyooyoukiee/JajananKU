@@ -51,7 +51,7 @@ class JajanController extends Controller
         return redirect('/jajanan');
     }
 
-    public function hapus_jajanan($id)
+    public function hapus_jajanan(int $id)
     {
         $jajan = Jajan::findOrFail($id);
         $jajan->delete();
@@ -59,7 +59,7 @@ class JajanController extends Controller
         return redirect('/jajanan');
     }
 
-    public function edit_jajanan($id)
+    public function edit_jajanan(int $id)
     {
         $jajan = Jajan::findOrFail($id);
         $semuaKategori = Kategori::all();
