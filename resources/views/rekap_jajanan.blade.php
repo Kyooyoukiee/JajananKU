@@ -11,8 +11,12 @@
         <canvas id="grafikKategori"></canvas>
     </div>
 
-    <script id="label-kategori" type="application/json">@json($semuaKategori->pluck('nama_kategori')->values())</script>
-    <script id="jumlah-jajanan-per-kategori" type="application/json">@json($semuaKategori->pluck('jajans_count')->values())</script>
+    <script id="label-kategori" type="application/json">
+        @json($semuaKategori->pluck('nama_kategori')->values())
+    </script>
+    <script id="jumlah-jajanan-per-kategori" type="application/json">
+        @json($semuaKategori->pluck('jajans_count')->values())
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const labelKategori = JSON.parse(document.getElementById('label-kategori').textContent);
