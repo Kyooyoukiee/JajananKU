@@ -3,7 +3,7 @@
 @section('title', 'Tambah jajanan')
 
 @section('content')
-    <a href="/jajanan" class="back-link">← Kembali ke daftar jajanan</a>
+    <a href="/jajanan" class="back-link group"><svg class="size-4 transition-transform group-hover:-translate-x-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Kembali ke daftar jajanan</a>
     <div class="mx-auto mt-5 max-w-2xl">
         <div class="mb-6"><p class="text-xs font-bold uppercase tracking-[0.15em] text-orange-600">Koleksi favorit</p><h1 class="mt-1 text-3xl font-black tracking-tight">Tambah jajanan</h1><p class="mt-2 text-sm text-stone-500">Isi detailnya, nanti tersimpan di daftarmu.</p></div>
         <form action="/jajanan/simpan" method="POST" class="form-card" novalidate>

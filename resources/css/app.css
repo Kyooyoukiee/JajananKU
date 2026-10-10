@@ -202,7 +202,7 @@ main article:nth-child(3) {
     }
 
     .back-link {
-        @apply inline-flex text-sm font-semibold text-stone-500 transition hover:text-orange-700;
+        @apply inline-flex items-center gap-2 text-sm font-semibold text-stone-500 transition hover:text-orange-700;
     }
 
     .form-card {
