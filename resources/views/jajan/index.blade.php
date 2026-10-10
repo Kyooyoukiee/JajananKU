@@ -25,7 +25,7 @@
                 <a href="/jajanan/tambah" class="btn-primary mt-5">Tambah jajanan</a>
             </div>
         @else
-            <div class="overflow-x-auto">
+            <div class="hidden overflow-x-auto xl:block">
                 <table class="w-full min-w-[860px] text-left text-sm">
                     <thead class="bg-stone-50 text-xs uppercase tracking-wider text-stone-500">
                         <tr><th class="px-6 py-3 font-semibold">#</th><th class="px-6 py-3 font-semibold">Nama jajanan</th><th class="px-6 py-3 font-semibold">Kategori</th><th class="px-6 py-3 font-semibold">Harga</th><th class="px-6 py-3 font-semibold">Ditambahkan</th><th class="px-6 py-3 font-semibold">Terakhir diperbarui</th><th class="px-6 py-3 font-semibold">Aksi</th></tr>
@@ -44,6 +44,36 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="grid gap-3 p-3 sm:p-4 xl:hidden">
+                @foreach($semuaJajan as $jajan)
+                    <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Jajanan {{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                <h3 class="mt-1 break-words text-base font-bold text-stone-900">{{ $jajan->nama_jajanan }}</h3>
+                            </div>
+                            <p class="shrink-0 text-right text-sm font-bold text-stone-900">Rp {{ number_format($jajan->harga_jajanan, 0, ',', '.') }}</p>
+                        </div>
+                        <div class="mt-3">
+                            <span class="inline-flex max-w-full rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-800">{{ $jajan->kategoris->nama_kategori ?? 'Tanpa kategori' }}</span>
+                        </div>
+                        <dl class="mt-4 grid gap-2 border-t border-stone-100 pt-3">
+                            <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs">
+                                <dt class="text-stone-500">Ditambahkan</dt>
+                                <dd class="font-medium text-stone-700">{{ $jajan->created_at->format('d M Y, H:i') }}</dd>
+                            </div>
+                            <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs">
+                                <dt class="text-stone-500">Terakhir diperbarui</dt>
+                                <dd class="font-medium text-stone-700">{{ $jajan->updated_at->format('d M Y, H:i') }}</dd>
+                            </div>
+                        </dl>
+                        <div class="mt-4 flex gap-2 border-t border-stone-100 pt-3">
+                            <a class="inline-flex min-h-10 flex-1 items-center justify-center rounded-xl bg-orange-50 px-3 py-2 text-xs font-semibold text-orange-800 transition hover:bg-orange-100" href="/jajanan/{{ $jajan->id }}/edit">Edit</a>
+                            <a class="inline-flex min-h-10 flex-1 items-center justify-center rounded-xl bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-700 transition hover:bg-rose-100" href="/jajanan/{{ $jajan->id }}/hapus" data-confirm-delete data-item-name="{{ $jajan->nama_jajanan }}">Hapus</a>
+                        </div>
+                    </article>
+                @endforeach
             </div>
         @endif
     </section>

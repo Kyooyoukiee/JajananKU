@@ -23,8 +23,20 @@
                 @enderror
             </div>
             <div class="form-field">
-                <label for="kategori_id">Kategori</label>
-                <select id="kategori_id" name="kategori_id"><option value="">Pilih kategori</option>@foreach($semuaKategori as $kategori)<option value="{{ $kategori->id }}" {{ old('kategori_id') == $kategori->id ? 'selected' : '' }}>{{ $kategori->nama_kategori }}</option>@endforeach</select>
+                <label id="kategori_id_label" for="kategori_id">Kategori</label>
+                <div class="custom-select" data-custom-select>
+                    <input type="hidden" id="kategori_id_value" name="kategori_id" value="{{ old('kategori_id') }}" data-select-value>
+                    <button class="custom-select-trigger" id="kategori_id" type="button" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="kategori_id_options" aria-labelledby="kategori_id_label" data-select-trigger>
+                        <span data-select-label>{{ $semuaKategori->firstWhere('id', old('kategori_id'))?->nama_kategori ?? 'Pilih kategori' }}</span>
+                        <svg class="size-4 shrink-0 text-stone-500 transition-transform" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="custom-select-options hidden" id="kategori_id_options" role="listbox" aria-labelledby="kategori_id_label" data-select-options>
+                        <button class="custom-select-option" type="button" role="option" aria-selected="{{ old('kategori_id') ? 'false' : 'true' }}" data-option-value="">Pilih kategori</button>
+                        @foreach($semuaKategori as $kategori)
+                            <button class="custom-select-option" type="button" role="option" aria-selected="{{ old('kategori_id') == $kategori->id ? 'true' : 'false' }}" data-option-value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</button>
+                        @endforeach
+                    </div>
+                </div>
                 @error('kategori_id')
                     <p class="form-error">{{ $message }}</p>
                 @enderror
