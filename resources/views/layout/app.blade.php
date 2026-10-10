@@ -10,7 +10,7 @@
 <body class="min-h-screen bg-stone-50 text-stone-900 antialiased">
     <div class="min-h-screen lg:grid lg:grid-cols-[250px_minmax(0,1fr)]">
         <aside class="border-b border-stone-200 bg-white px-5 py-5 lg:fixed lg:inset-y-0 lg:flex lg:w-[250px] lg:flex-col lg:border-b-0 lg:border-r lg:px-6 lg:py-8">
-            <a href="/" class="flex items-center gap-3">
+            <a class="flex items-center gap-3">
                 <span class="grid size-11 place-items-center rounded-2xl bg-orange-100 text-orange-700">
                     <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11h16l-2 8H6l-2-8Z" fill="currentColor" opacity=".18"/><path d="M4 11h16l-2 8H6l-2-8ZM3 11h18M8 8c0-1.2 1-1.8 1-3m4 3c0-1.2 1-1.8 1-3m2 6 3-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>

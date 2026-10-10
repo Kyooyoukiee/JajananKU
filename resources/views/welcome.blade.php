@@ -11,7 +11,6 @@
             <h1 class="mt-5 text-4xl font-black leading-tight tracking-tight sm:text-5xl">Semua jajanan<br class="hidden sm:block"> favorit, satu tempat.</h1>
             <p class="mt-4 max-w-xl text-sm leading-7 text-orange-50 sm:text-base">Catat jajanan yang kamu suka, kelompokkan berdasarkan kategori, dan lihat rekapnya dengan mudah.</p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="/jajanan/tambah" class="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-orange-700 shadow-sm transition hover:bg-orange-50"><svg class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Tambah jajanan</a>
                 <a href="/jajanan" class="inline-flex items-center gap-2 rounded-xl border border-white/40 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10">Lihat daftar <svg class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
         </div>
